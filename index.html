@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Damascus Palace Hotel - SyriaStay</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <style>
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header Section */
+    .property-header {
+      margin-bottom: 30px;
+    }
+    .property-title {
+      font-size: 2rem;
+      color: #0a1d37;
+      margin-bottom: 5px;
+    }
+    .property-location {
+      display: flex;
+      align-items: center;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .location-icon {
+      margin-right: 5px;
+    }
+    .property-badge {
+      display: inline-block;
+      background: #e3f2fd;
+      color: #0a1d37;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    /* Photo Gallery */
+    .gallery {
+      margin-bottom: 30px;
+    }
+    .swiper {
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-tour {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .video-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #0a1d37;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .video-icon {
+      margin-right: 8px;
+    }
+
+    /* Main Content Layout */
+    .content-wrapper {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .main-content {
+      flex: 2;
+    }
+    .sidebar {
+      flex: 1;
+    }
+
+    /* Basic Info */
+    .basic-info {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+    }
+    .info-icon {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* Price Options */
+    .price-options {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .price-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .price-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .price-type {
+      font-weight: bold;
+    }
+    .price-amount {
+      font-size: 1.2rem;
+      color: #0a1d37;
+    }
+    .price-note {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 15px;
+    }
+
+    /* Amenities */
+    .amenities {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .amenity-item {
+      display: flex;
+      align-items: center;
+    }
+    .amenity-icon {
+      margin-right: 8px;
+    }
+
+    /* Booking Info */
+    .booking-info {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 20px;
+    }
+    .calendar {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .guest-selector {
+      margin-bottom: 20px;
+    }
+    .guest-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-top: 5px;
+    }
+    .book-btn {
+      background: #0a1d37;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Reviews */
+    .reviews {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .review-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .review-stars {
+      color: #ffc107;
+      font-size: 1.2rem;
+      margin-right: 10px;
+    }
+    .review-item {
+      border-top: 1px solid #eee;
+      padding: 15px 0;
+    }
+    .review-text {
+      margin-bottom: 5px;
+    }
+    .review-author {
+      font-weight: bold;
+    }
+    .review-date {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .all-reviews {
+      display: inline-block;
+      margin-top: 10px;
+      color: #0a1d37;
+      text-decoration: none;
+    }
+
+    /* Related Properties */
+    .related-properties {
+      margin-bottom: 30px;
+    }
+    .related-title {
+      font-size: 1.5rem;
+      color: #0a1d37;
+      margin-bottom: 20px;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .related-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .related-img {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .related-body {
+      padding: 15px;
+    }
+    .related-name {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      color: #0a1d37;
+    }
+    .related-location {
+      color: #666;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    .related-price {
+      font-weight: bold;
+    }
+
+    /* FAQ */
+    .faq {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .faq-item {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+    .faq-question {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .faq-answer {
+      color: #666;
+    }
+
+    /* Sticky Book Button */
+    .sticky-book {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 15px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sticky-price {
+      font-weight: bold;
+      color: #0a1d37;
+      font-size: 1.1rem;
+    }
+    .sticky-btn {
+      background: #0a1d37;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+      .booking-info {
+        position: static;
+      }
+      .sticky-book {
+        display: flex;
+      }
+      .swiper {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Property Header -->
+    <div class="property-header">
+      <h1 class="property-title">Damascus Palace Hotel</h1>
+      <div class="property-location">
+        <span class="location-icon">📍</span>
+        <span>Old City, Damascus</span>
+      </div>
+      <span class="property-badge">🪪 Syrian Passport Discount Available</span>
+    </div>
+
+    <!-- Photo Gallery -->
+    <div class="gallery">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/damascus-hotel-1.jpg" alt="Hotel exterior">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/damascus-hotel-2.jpg" alt="Hotel lobby">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/damascus-hotel-3.jpg" alt="Hotel room">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <div class="video-tour">
+        <a href="#" class="video-btn">
+          <span class="video-icon">🎥</span>
+          Take a Video Tour
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+      <div class="main-content">
+        <!-- Basic Info -->
+        <section class="basic-info">
+          <h2>About This Property</h2>
+          <p>A beautifully restored historic hotel in the heart of Old Damascus, offering authentic Syrian hospitality with modern comforts. Just steps away from the Umayyad Mosque and Souq Al-Hamidiyah.</p>
+          
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-icon">🏨</span>
+              <span>Hotel Room</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">👥</span>
+              <span>2 Adults + 1 Child</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">🛏️</span>
+              <span>1 King Bed</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📏</span>
+              <span>35 m²</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Price Options -->
+        <section class="price-options">
+          <h2>Price Options</h2>
+          <div class="price-card">
+            <div class="price-header">
+              <span class="price-type">💰 Standard (Refundable)</span>
+              <span class="price-amount">$120/night</span>
+            </div>
+            <p>Free cancellation up to 3 days before check-in</p>
+          </div>
+          <div class="price-card">
+            <div class="price-header">
+              <span class="price-type">💸 Discounted (Non-refundable)</span>
+              <span class="price-amount">$95/night</span>
+            </div>
+            <p>Save 20% - No refunds or changes allowed</p>
+          </div>
+          <p class="price-note">🔑 Promo codes and Syrian passport discounts are available at checkout.</p>
+        </section>
+
+        <!-- Amenities -->
+        <section class="amenities">
+          <h2>Amenities</h2>
+          <div class="amenities-grid">
+            <div class="amenity-item">
+              <span class="amenity-icon">📶</span>
+              <span>Wi-Fi</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🍳</span>
+              <span>Breakfast</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">📺</span>
+              <span>TV</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🔥</span>
+              <span>Heating</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🧴</span>
+              <span>Towels</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🚿</span>
+              <span>Private Bathroom</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">❄️</span>
+              <span>A/C</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🪑</span>
+              <span>Desk</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🧊</span>
+              <span>Fridge</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">👔</span>
+              <span>Closet</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">💇</span>
+              <span>Hair Dryer</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🛎️</span>
+              <span>Room Service</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="reviews">
+          <div class="review-header">
+            <span class="review-stars">★★★★☆</span>
+            <span>4.2 (128 reviews)</span>
+          </div>
+          <div class="review-item">
+            <p class="review-text">"Great location and super friendly staff. The breakfast was amazing!"</p>
+            <div>
+              <span class="review-author">— Lina,</span>
+              <span class="review-date">January 2025</span>
+            </div>
+          </div>
+          <div class="review-item">
+            <p class="review-text">"Beautiful traditional architecture with modern comforts. Highly recommend."</p>
+            <div>
+              <span class="review-author">— Ahmed,</span>
+              <span class="review-date">December 2024</span>
+            </div>
+          </div>
+          <a href="#" class="all-reviews">🔗 Show All Reviews</a>
+        </section>
+
+        <!-- Related Properties -->
+        <section class="related-properties">
+          <h2 class="related-title">You May Also Like</h2>
+          <div class="related-grid">
+            <div class="related-card">
+              <img src="images/hotel-zaman.jpg" alt="Hotel Zaman" class="related-img">
+              <div class="related-body">
+                <h3 class="related-name">Hotel Zaman</h3>
+                <p class="related-location">📍 Homs</p>
+                <p class="related-price">$60/night</p>
+              </div>
+            </div>
+            <div class="related-card">
+              <img src="images/al-yasmin.jpg" alt="Al-Yasmin Apartment" class="related-img">
+              <div class="related-body">
+                <h3 class="related-name">Private Apartment Al-Yasmin</h3>
+                <p class="related-location">📍 Latakia</p>
+                <p class="related-price">$40/night</p>
+              </div>
+            </div>
+            <div class="related-card">
+              <img src="images/old-damascus.jpg" alt="Old Damascus Hotel" class="related-img">
+              <div class="related-body">
+                <h3 class="related-name">Boutique Hotel Old Damascus</h3>
+                <p class="related-location">📍 Damascus</p>
+                <p class="related-price">$80/night</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq">
+          <h2>FAQ / Extra Info</h2>
+          <div class="faq-item">
+            <p class="faq-question">🛎️ How to Pay:</p>
+            <p class="faq-answer">All payments are made securely online.
+
+              After payment, our Syria-based team completes the booking using local cash and confirms everything for you.</p>
+          </div>
+          <div class="faq-item">
+            <p class="faq-question">🕒 Check-in / Check-out:</p>
+            <p class="faq-answer">Check-in: 14:00 — Check-out: 11:00. Flexible times can be arranged with prior notice.</p>
+          </div>
+          <div class="faq-item">
+            <p class="faq-question">📍 Local Tips:</p>
+            <p class="faq-answer">Bring a local SIM card for better connectivity. Ask the host about local food or guided tours.</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Booking Sidebar -->
+      <div class="sidebar">
+        <div class="booking-info">
+          <h2>Book Your Stay</h2>
+          <div class="calendar">
+            <!-- Calendar placeholder -->
+            <p>Availability Calendar</p>
+          </div>
+          <div class="guest-selector">
+            <label>🕒 Stay Duration</label>
+            <select class="guest-input">
+              <option>1 night</option>
+              <option>2 nights</option>
+              <option>3 nights</option>
+              <option>1 week</option>
+            </select>
+          </div>
+          <div class="guest-selector">
+            <label>👤 Adults</label>
+            <select class="guest-input">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4+</option>
+            </select>
+          </div>
+          <div class="guest-selector">
+            <label>🧒 Children</label>
+            <select class="guest-input">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+            </select>
+          </div>
+          <button class="book-btn">✅ Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Book Button (Mobile) -->
+  <div class="sticky-book">
+    <div class="sticky-price">From $95/night</div>
+    <button class="sticky-btn">Book Now</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    // Initialize Swiper gallery
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // Show sticky book button on scroll
+    window.addEventListener('scroll', function() {
+      const stickyBook = document.querySelector('.sticky-book');
+      if (window.innerWidth <= 768) {
+        stickyBook.style.display = 'flex';
+      }
+    });
+  </script>
+</body>
+</html>
