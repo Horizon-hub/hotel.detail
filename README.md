@@ -1,78 +1,110 @@
-# Homepage Layout
+# 🏨 Hotel Detail Page – SyriaStay
 
-This document outlines the layout and requirements for the homepage of our travel and accommodation platform.
+## 1. Hotel Title & Location
 
-## Header
+**Hotel Name:** [Hotel Name]
 
-* **Logo:** Centered or left-aligned.
-    * (SVG/PNG file provided).
-* **Menu:**
-    * **Become a Partner →**
-        * Dropdown with WhatsApp links:
-            * Hotel Owner
-            * Apartment Host
-            * Airport Pickup
-            * Tourist Guide
-            * Trip Planner
-    * **About Us:** (single page, no contact form).
-* **Language/Currency Selectors:** Top-right (🌐 + 💱).
-* **Design:** Solid background color (no images).
+**City / Region:** [City / Region]
 
-## Hero Section
+**Approximate Address:** (e.g., neighborhood or district)
 
-* **Background:** Full-screen image (Umayyad Mosque with a luxury aesthetic).
-* **Text:** "More Than a Stay — A Journey to Remember".
-* **Search Box:**
-    * **Fields:** Destination, Check-in/out, Number of Guests.
-    * **CTA:** "Search" (triggers listings page).
+**Badge:** 🪪 “Syrian Passport Discount Available” (if applicable)
 
-## Featured Destinations
+## 2. Photo Gallery
 
-* **Title:** "Top-Rated Experiences Waiting for You".
-* **Layout:** Horizontal scroll (Swiper.js carousel).
-* **Card Contents:**
-    * Photo + Name + Location + Tagline + "Book Now" button.
+* Image Carousel (property photos)
+* 🎥 Below gallery: Take a Video Tour — (Embedded from YouTube: [YouTube Video Link])
 
-## Key Functional Sections
+## 3. Basic Info & Highlights
 
-* **Step Journey:**
-    * **Discover:** Browse stays/trips. Optional "Request a Trip Plan" (Trip planning page).
-    * **Book:** Secure online payment (Stripe/PayPal).
-    * **Enjoy:** Confirmation voucher + support access.
-* **Services Grid:**
-    * **Items:** Hotels, Apartments, Trip Planner, Airport Pickup, Tour Guides.
-    * **Layout:** 3-column grid (mobile-responsive).
-* **Testimonials:**
-    * Carousel or static grid.
-    * **Sample text:** "Seamless experience from booking to check-out!" – Leila, Berlin.
+**Property Type:** Hotel Room or Private Apartment
 
-## Footer
+**Max Guests:** [Number] Adults + [Number] Children
 
-* **Links:** Home | Explore | Become a Partner | About | Blog.
-* **Legal:** Privacy Policy | Terms | Impressum (German compliance).
+**Short Description:** 1–2 lines highlighting the location, comfort, or unique charm.
 
-## 4. Technical Requirements
+## 4. Price Options
 
-### Frontend
+💰 **Standard (Refundable):** Full price
 
-* **Framework:** React.js (Next.js)
-* **Languages:** HTML/CSS/JS, RTL support for Arabic.
-* **Libraries:** Swiper.js (carousels), Tailwind/Bootstrap (styling).
+💸 **Discounted (Non-refundable):** Lower price
 
-### Backend
+🔑 **Note:** “Promo codes and Syrian passport discounts can be applied during checkout.”
 
-* **Database:** Firebase (MVP) or Node.js + MongoDB.
-* **Payments:** Stripe API (Swiss account in Euro).
-* **Emails:** SendGrid/Postmark (transactional emails).
+## 5. Amenities (Shown as icons or checklist)
 
-### Admin Dashboard
+**Comfort & Essentials:**
+* Wi-Fi
+* Towels
+* Private Bathroom
+* Heating
+* Fan / A/C
 
-* **Features:**
-    * View bookings (Pending/Confirmed).
-    * Manual status updates (via WhatsApp confirmation).
-    * Refund button (triggers Stripe API).
+**Convenience:**
+* Coffee/Tea
+* Fridge
+* Closet/Storage
+* Desk
+* Hair Dryer
 
-## 5. Design Assets Needed
+**Services:**
+* Breakfast
+* Room Service
+* Safe
+* Welcome Gift
 
-* **Logo:** SVG/PNG (transparent background).
-* **Hero Image:** High-resolution image of the Umayyad Mosque with a luxury aesthetic.
+**Facilities (if available):**
+* Swimming Pool
+* Fitness Center
+* TV
+
+## 6. Booking Info
+
+📅 Availability Calendar
+
+📆 Select Stay Duration
+
+👤 Guests: Number of Adults & Children
+
+✅ **Book Now** button → goes to Payment Page
+
+💡 **Note:** Payment is made securely online. Our trusted team in Syria will complete the reservation and coordinate everything on your behalf.
+
+## 7. Guest Reviews
+
+⭐️⭐️⭐️⭐️☆
+“Great location and super friendly staff.”
+
+— Lina, January 2025
+
+[ 👉 Show All Reviews ]
+
+## 8. You May Also Like
+
+Carousel of 2–3 suggestions based on location or similar price
+
+* 🏨 Hotel Zaman — Homs — $60/night
+* 🏠 Private Apartment Al-Yasmin — Latakia — $40/night
+* 🏛️ Boutique Hotel Old Damascus — Damascus — $80/night
+
+## 9. FAQ / Extra Info (Optional)
+
+**🛎️ How to Pay**
+
+All payments are made securely online.
+
+After payment, our Syria-based team completes the booking using local cash and confirms everything for you.
+
+**⏰ Check-in / Check-out**
+
+Standard check-in: 14:00
+
+Check-out: 11:00
+
+Early/late times may be available with prior notice.
+
+**📍 Local Tips**
+
+Internet access may be limited — we recommend using a local SIM card.
+
+Ask your host (via admin) about nearby restaurants, guides, or hidden gems.
